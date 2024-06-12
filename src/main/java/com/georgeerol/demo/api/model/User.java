@@ -7,19 +7,16 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
+@Table(name = "app_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String name;
-    private int age;
     private String email;
 
-    @OneToMany(mappedBy = "user")
-    private List<Expense> expenses;
 }

@@ -6,16 +6,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-@Data
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "category")
 public class Category {
-   @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-   private String name;
+    private String name;
 
-   @OneToMany(mappedBy = "category")
-    private List<Expense> expenses;
 }

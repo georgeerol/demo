@@ -6,23 +6,24 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
-@Data
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "expense")
 public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
-    private Double amount;
+    private double amount;
     private LocalDate date;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
     private Category category;
+
+    // Getters and Setters
 }
